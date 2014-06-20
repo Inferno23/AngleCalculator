@@ -5,10 +5,10 @@ import java.awt.event.ActionListener;
 
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.EmptyBorder;
 
@@ -16,7 +16,7 @@ public class OutputView {
 
 	private JFrame frame;
 	
-	private JPanel contentPane;
+	private JLabel contentPane;
 	private JLabel minValue;
 	private JLabel maxValue;
 	private JButton back;
@@ -28,10 +28,10 @@ public class OutputView {
 		this.frame = frame;
 		this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.frame.setBounds(100, 100, 160, 175);
-		contentPane = new JPanel();
+		contentPane = new JLabel(new ImageIcon("src/MevionLogo-color.jpg"));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		this.frame.setContentPane(contentPane);
-		
+				
 		JLabel lblRangeMin = new JLabel("Range min");
 		
 		JLabel lblRangeMax = new JLabel("Range max");
@@ -62,7 +62,7 @@ public class OutputView {
 							.addPreferredGap(ComponentPlacement.UNRELATED)
 							.addComponent(maxValue))
 						.addComponent(back))
-					.addContainerGap(35, Short.MAX_VALUE))
+					.addContainerGap(328, Short.MAX_VALUE))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -77,7 +77,7 @@ public class OutputView {
 						.addComponent(maxValue))
 					.addGap(18)
 					.addComponent(back)
-					.addContainerGap(28, Short.MAX_VALUE))
+					.addContainerGap(192, Short.MAX_VALUE))
 		);
 		contentPane.setLayout(gl_contentPane);
 		
@@ -99,10 +99,11 @@ public class OutputView {
 	 	 
 	 	min = center - range;
 	 	max = center + range;
+	 	
+	 	String minResult = String.format("%.2f",  min);
+	 	String maxResult = String.format("%.2f",  max);
 	 	 
-	 	 
-		minValue.setText(String.valueOf(min));
-		maxValue.setText(String.valueOf(max));
+		minValue.setText(minResult);
+		maxValue.setText(maxResult);
 	}
-
 }

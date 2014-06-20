@@ -5,10 +5,10 @@ import java.awt.event.ActionListener;
 
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.EmptyBorder;
@@ -17,7 +17,7 @@ public class InputView {
 	
 	private JFrame frame;
 	
-	private JPanel contentPane;
+	private JLabel contentPane;
 	private JTextField xText;
 	private JTextField yText;
 
@@ -28,7 +28,7 @@ public class InputView {
 		this.frame = frame;
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setBounds(100, 100, 160, 175);
-		contentPane = new JPanel();
+		contentPane = new JLabel(new ImageIcon("src/MevionLogo-color.jpg"));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		frame.setContentPane(contentPane);
 		
